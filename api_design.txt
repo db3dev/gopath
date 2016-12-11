@@ -1,0 +1,15 @@
+gopath add ${workspace alias} ${path}/${pwd}
+    creates a go workspace variable if not existent from path or current working directory and adds to end of $GOPATH
+
+gopath rem ${workspace alias}
+    removes a go workspace variable from $GOPATH
+
+gopath edit ${workspace alias} ${path}/${pwd}
+    creates or modifies a go workspace variable but does not add or remove from gopath
+
+gopath del ${workspace alias}
+    deletes existing go workspace variable
+
+// DEFAULT: 
+gopath ${workspace alias} *
+    wraps * as go * after sourcing workspace as head of $GOPATH for disposable environment
