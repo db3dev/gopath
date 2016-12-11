@@ -1,7 +1,6 @@
 package gopath
 
 import (
-	"fmt"
 	"os"
 )
 
@@ -28,24 +27,4 @@ func main() {
 	default:
 		goWrap()
 	}
-}
-
-func add() {
-	fmt.Println("add")
-}
-
-func rem() {
-	fmt.Println("rem")
-}
-
-func del() {
-	fmt.Println("del")
-}
-
-func edit() {
-	fmt.Println("edit")
-}
-
-func goWrap() {
-	fmt.Println("default")
 }
