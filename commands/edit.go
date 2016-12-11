@@ -1,7 +1,7 @@
-package gopath
+package commands
 
 import "fmt"
 
-func edit() {
+func Edit() {
 	fmt.Println("edit")
 }

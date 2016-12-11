@@ -1,7 +1,10 @@
-package gopath
+package main
 
 import (
 	"os"
+
+	"github.com/db3dev/gopath/commands"
+	"github.com/db3dev/gopath/util"
 )
 
 const (
@@ -11,20 +14,22 @@ const (
 
 func main() {
 
-	switch args := os.Args[1:]; args[0] {
-	case "add":
-		add()
+	if util.CheckForProfile() {
+		switch args := os.Args[1:]; args[0] {
+		case "add":
+			commands.Add()
 
-	case "rem":
-		rem()
+		case "rem":
+			commands.Rem()
 
-	case "del":
-		del()
+		case "del":
+			commands.Del()
 
-	case "edit":
-		edit()
+		case "edit":
+			commands.Edit()
 
-	default:
-		goWrap()
+		default:
+			commands.GoWrap()
+		}
 	}
 }

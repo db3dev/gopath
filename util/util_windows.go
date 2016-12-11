@@ -1,14 +1,14 @@
 // +build windows
 
-package gopath
+package util
 
 import (
 	"errors"
 	"fmt"
 )
 
-func checkForProfile() bool {
-	return false
+func CheckForProfile() bool {
+	return createProfile()
 }
 
 func createProfile() bool {

@@ -1,7 +1,7 @@
-package gopath
+package commands
 
 import "fmt"
 
-func del() {
+func Del() {
 	fmt.Println("del")
 }
