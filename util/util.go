@@ -74,18 +74,18 @@ func (w *ProfileWriter) ComposeProfile() string {
 	var wProfile string
 
 	// Indicate gopath is in environment
-	wProfile = "GOPATHi=1\n"
+	wProfile = "export GOPATHi=1\n"
 
 	// Iterate and publish all aliases
 	for i := range goAlias {
-		wProfile += goAlias[i] + "\n"
+		wProfile += "export " + goAlias[i] + "\n"
 	}
 
 	// Write in GOPATH
 	if goPath == "" {
-		wProfile += "GOPATH=" + GetDefaultWorkspace() + "\n"
+		wProfile += "export GOPATH=" + GetDefaultWorkspace() + "\n"
 	} else {
-		wProfile += goPath + "\n"
+		wProfile += "export " + goPath + "\n"
 	}
 
 	// Return Profile
