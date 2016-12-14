@@ -19,7 +19,7 @@ func main() {
 	if util.CheckForProfile() {
 
 		if len(os.Args) > 1 {
-			switch args := os.Args[1:]; args[0] {
+			switch os.Args[1] {
 			case "add":
 				commands.Add()
 
@@ -38,6 +38,5 @@ func main() {
 		} else {
 			fmt.Println("GOPATH: Completed!")
 		}
-
 	}
 }
