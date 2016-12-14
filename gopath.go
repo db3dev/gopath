@@ -9,11 +9,6 @@ import (
 	"github.com/db3dev/gopath/util"
 )
 
-const (
-	fileSeperator = os.PathSeparator
-	pathSeperator = os.PathListSeparator
-)
-
 func main() {
 
 	if util.CheckForProfile() {
