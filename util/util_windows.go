@@ -10,9 +10,9 @@ func CheckForProfile() bool {
 
 // ParseEnvForGoPath Extracts the GOPATH out of the current environment
 func (w *ProfileWriter) ParseEnvForGoPath() string {
-	for i := range w.env {
-		if strings.Contains(strings.ToLower(w.env[i]), "gopath=") {
-			return w.env[i]
+	for i := range w.Env {
+		if strings.Contains(strings.ToLower(w.Env[i]), "gopath=") {
+			return w.Env[i]
 		}
 	}
 

@@ -38,7 +38,7 @@ func CheckForProfile() bool {
 }
 
 func createProfile() bool {
-	pw := ProfileWriter{env: os.Environ(), profile: nil}
+	pw := ProfileWriter{Env: os.Environ(), Profile: nil}
 
 	// Create profile file
 	file, err := os.Create(GetProfileDir())
@@ -62,8 +62,8 @@ func createProfile() bool {
 
 // ProfileWriter Supplies methods for writing profiles and parsing elements of the profile
 type ProfileWriter struct {
-	env     []string
-	profile []string
+	Env     []string
+	Profile []string
 }
 
 // ComposeProfile Parses environment and existing profile alias to create a profile

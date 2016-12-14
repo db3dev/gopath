@@ -6,9 +6,9 @@ import "strings"
 
 // ParseEnvForGoPath Extracts the GOPATH out of the current environment
 func (w *ProfileWriter) ParseEnvForGoPath() string {
-	for i := range w.env {
-		if strings.Contains(w.env[i], "GOPATH=") {
-			return w.env[i]
+	for i := range w.Env {
+		if strings.Contains(w.Env[i], "GOPATH=") {
+			return w.Env[i]
 		}
 	}
 

@@ -3,7 +3,7 @@ package util
 import "testing"
 
 func TestComposesProfile_NewProfileFromExistingGoPath(t *testing.T) {
-	pw := ProfileWriter{env: []string{"x=nope/not/i", "GOPATH=~/go_workspace", "Y=not/me"}, profile: nil}
+	pw := ProfileWriter{Env: []string{"x=nope/not/i", "GOPATH=~/go_workspace", "Y=not/me"}, Profile: nil}
 	expectedOutput := "export GOPATHi=1\n" +
 		"export GOPATH=~/go_workspace\n"
 
@@ -14,7 +14,7 @@ func TestComposesProfile_NewProfileFromExistingGoPath(t *testing.T) {
 }
 
 func TestComposesProfile_NewProfileFromNonExistingGoPath(t *testing.T) {
-	pw := ProfileWriter{env: []string{"x=nope/not/i", "gopath=~/nope_space", "Y=not/me"}, profile: nil}
+	pw := ProfileWriter{Env: []string{"x=nope/not/i", "gopath=~/nope_space", "Y=not/me"}, Profile: nil}
 	expectedOutput := "export GOPATHi=1\n" +
 		"export GOPATH=" + GetDefaultWorkspace() + "\n"
 
