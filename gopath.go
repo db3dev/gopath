@@ -27,6 +27,9 @@ func main() {
 			case "edit":
 				commands.Edit()
 
+			case "primary":
+				commands.Primary()
+
 			default:
 				commands.GoWrap()
 			}
