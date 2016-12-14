@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 
+	"fmt"
+
 	"github.com/db3dev/gopath/commands"
 	"github.com/db3dev/gopath/util"
 )
@@ -15,21 +17,27 @@ const (
 func main() {
 
 	if util.CheckForProfile() {
-		switch args := os.Args[1:]; args[0] {
-		case "add":
-			commands.Add()
 
-		case "rem":
-			commands.Rem()
+		if len(os.Args) > 1 {
+			switch args := os.Args[1:]; args[0] {
+			case "add":
+				commands.Add()
 
-		case "del":
-			commands.Del()
+			case "rem":
+				commands.Rem()
 
-		case "edit":
-			commands.Edit()
+			case "del":
+				commands.Del()
 
-		default:
-			commands.GoWrap()
+			case "edit":
+				commands.Edit()
+
+			default:
+				commands.GoWrap()
+			}
+		} else {
+			fmt.Println("GOPATH: Completed!")
 		}
+
 	}
 }

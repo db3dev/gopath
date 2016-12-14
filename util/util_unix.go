@@ -2,29 +2,21 @@
 
 package util
 
-import (
-	"errors"
-	"fmt"
-	"os"
-)
+import "strings"
 
-func CheckForProfile() bool {
-	if _, err := os.Stat("~/.gopath"); err != nil {
-		// If profile does not exist create it
-		return createProfile()
+// ParseEnvForGoPath Extracts the GOPATH out of the current environment
+func (w *ProfileWriter) ParseEnvForGoPath() string {
+	for i := range w.env {
+		if strings.Contains(w.env[i], "GOPATH=") {
+			return w.env[i]
+		}
 	}
 
-	return true
+	// GOPATH does not exist in environment
+	return ""
 }
 
-func createProfile() bool {
-	fmt.Println(os.Getenv("GOPATH"))
-
-	fmt.Println(errors.New("Not Implemented").Error())
-
-	return false
-}
-
-func parsePaths() {
-
+// ParseProfileForAlias Creates a slice of alias from a profile
+func (w *ProfileWriter) ParseProfileForAlias(alias string) []string {
+	return nil
 }
